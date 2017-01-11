@@ -1,0 +1,225 @@
+#!/usr/bin/env bash
+
+#/**
+# * @package     BlueAcorn/GreenPistachio
+# * @version     4.1.0
+# * @author      Blue Acorn, Inc. <code@blueacorn.com>
+# * @copyright   Copyright © 2016 Blue Acorn, Inc.
+# */
+
+# globals
+#########
+
+type greadlink >/dev/null 2>&1 && CWD="$(dirname "$(greadlink -f "$0")")" || \
+  CWD="$(dirname "$(readlink -f "$0")")"
+
+. $CWD/.functions.sh || error "unable to load shared functions"
+
+###########
+# Utility #
+###########
+
+display_help () {
+
+cat <<-EOF
+
+  Utility for Managing Green Pistachio Workflow
+
+  Usage: setup <command> [options]
+
+  Commands:
+    dev                 Installs Dependancies
+    site                Setting up a Site/Repo for the First Time
+    update              Update Dependancies if they've Changed
+
+  Options:
+    --help              Display help
+
+EOF
+
+    if [ $# -eq 0 ]; then
+        exit 0
+    fi
+
+    exit $1
+
+}
+
+error () {
+    echo -en >&2 "\033[31m"
+    echo -e >&2 "$@"
+    echo -en >&2 "\033[0m"
+    exit 1
+}
+
+############
+# Workflow #
+############
+
+reset_blueacorn_ui () {
+
+    # Create node_modules symlink
+    echo "======================================================="
+    echo "Removing node_modules and bower_components"
+    echo "======================================================="
+
+    # Used for a Fresh Start
+    sudo rm -rf node_modules bower_components
+
+    echo
+    echo "DONE!"
+    echo
+
+}
+
+install_dependancies () {
+    # Install JQ binary based on OS
+    install_jq
+
+    # CD in blueacornui directory
+    cd $BLUEACORNUI_DIR
+
+    # Install Node Modules
+    install_node_modules
+
+    # Install Bower Components
+    install_bower_modules
+
+    # Create node_modules symlink
+    echo "======================================================="
+    echo "Checking if node_modules symlink exists"
+    echo "======================================================="
+
+    cd $WEBROOT_DIR
+
+    if [ ! -L node_modules ]; then
+        ln -s $BLUEACORNUI_DIR/node_modules
+
+        echo
+        echo "Created node_modules symlink in $WEBROOT_DIR"
+        echo
+    else
+        echo
+        echo "Smylink node_modules already exists"
+        echo
+    fi
+
+}
+
+# Install JQ binary
+install_jq () {
+    JQ_URL='https://github.com/stedolan/jq/releases/download/jq-1.5/jq-osx-amd64'
+
+    cd $REPO_ROOT/bin
+
+    echo "======================================================="
+    echo "Checking if JQ binary already exists"
+    echo "======================================================="
+
+    if [ ! -f jq ]; then
+        if [ "$OS" == "Linux" ]; then
+            JQ_URL='https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64'
+        fi
+
+        if [ "$OS" == "Solaris" ]; then
+            JQ_URL='https://github.com/stedolan/jq/releases/download/jq-1.4/jq-solaris11-64'
+        fi
+
+        wget -O jq "$JQ_URL"
+        chmod 0777 jq
+    else
+        echo
+        echo "JQ binary already exists"
+        echo
+    fi
+}
+
+# Install Node Modules
+install_node_modules() {
+
+    echo "======================================================="
+    echo "Installing NPM modules"
+    echo "======================================================="
+
+    npm install
+
+    echo
+    echo "DONE!"
+    echo
+
+}
+
+# Install Bower Components
+install_bower_modules() {
+
+    echo "======================================================="
+    echo "Installing bower modules"
+    echo "======================================================="
+
+    bower install
+
+    echo
+    echo "DONE!"
+    echo
+
+}
+
+# Setting up Green Pistachio for the Dev First Time
+workflow_dev () {
+
+    if [ ! -d ../site ]; then
+        cd blueacornui
+    else
+        cd ../blueacornui
+    fi
+
+    # Updating
+    workflow_update
+
+}
+
+# Setting up Green Pistachio for the Repo First Time
+workflow_site () {
+
+    if [ ! -d ../site ]; then
+        cd blueacornui
+    else
+        cd ../blueacornui
+    fi
+
+  # Bringing in the New
+  install_dependancies
+
+}
+
+workflow_update () {
+
+  # Clearing out the old blueacornui
+  reset_blueacorn_ui
+
+  # Bringing in the New
+  install_dependancies
+
+}
+
+###########
+# Runtime #
+###########
+
+runstr="display_help"
+
+if [ $# -eq 0 ]; then
+    display_help 1
+else
+    while [ $# -ne 0 ]; do
+        case $1 in
+            -h|--help|help)    display_help ;;
+            dev)                runstr="workflow_dev" ; shift ;;
+            site)               runstr="workflow_site" ; shift ;;
+            update)             runstr="workflow_update" ;;
+        esac
+        shift
+    done
+
+    $runstr
+fi

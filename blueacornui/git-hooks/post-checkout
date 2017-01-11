@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+printf "Be sure to run grunt deploy to update your sandbox\n";

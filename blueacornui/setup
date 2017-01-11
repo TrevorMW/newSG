@@ -1,0 +1,168 @@
+#!/usr/bin/env bash
+
+#/**
+# * @package     BlueAcorn/GreenPistachio
+# * @version     4.1.0
+# * @author      Blue Acorn, Inc. <code@blueacorn.com>
+# * @copyright   Copyright © 2016 Blue Acorn, Inc.
+# */
+
+# varstrap
+##########
+
+REPO_ROOT=${REPO_ROOT:-"$(git rev-parse --show-toplevel)"}
+WEBROOT_DIR="site"
+WEBROOT_DIR="$REPO_ROOT/$WEBROOT_DIR"
+
+###########
+# Utility #
+###########
+
+display_help () {
+
+cat <<-EOF
+
+  Utility for Managing Green Pistachio Workflow
+
+  Usage: ./setup <command> [options]
+
+  Commands:
+    dev_setup     Installs Dependancies
+    site_setup    Setting up a Site/Repo for the First Time
+    update        Update Dependancies if they've Changed
+
+  Options:
+    None at this time.
+
+EOF
+
+    if [ $# -eq 0 ]; then
+        exit 0
+    fi
+
+    exit $1
+
+}
+
+error () {
+    echo -en >&2 "\033[31m"
+    echo -e >&2 "$@"
+    echo -en >&2 "\033[0m"
+    exit 1
+}
+
+############
+# Workflow #
+############
+
+reset_blueacorn_ui () {
+
+    # Used for a Fresh Start
+    sudo rm -rf node_modules bower_components
+
+}
+
+install_dependancies () {
+
+    # Install Node Modules
+    install_node_modules
+
+    # Install Bower Components
+    install_bower_modules
+
+    cd $REPO_ROOT/.git/hooks
+
+    if [ ! -L post-checkout ]; then
+        ln -s $REPO_ROOT/blueacornui/git-hooks/post-checkout .
+    fi
+
+}
+
+# Install Node Modules
+install_node_modules() {
+
+    npm install
+
+}
+
+# Install Bower Components
+install_bower_modules() {
+
+    bower install
+
+}
+
+upload_to_sandbox () {
+    echo
+    prompt_confirm "Do you want to upload to the sandbox?" || exit 0;
+
+    grunt deploy --folder="/"
+}
+
+# Setting up Green Pistachio for the Dev First Time
+workflow_dev_setup () {
+
+    # Updating
+    workflow_update
+
+}
+
+# Setting up Green Pistachio for the Repo First Time
+workflow_site_setup () {
+
+    if [ ! -d ../site ]; then
+        cd blueacornui
+    else
+        cd ../blueacornui
+    fi
+
+  # Bringing in the New
+  install_dependancies
+
+  # Uploading repo to Sandbox
+  upload_to_sandbox
+
+}
+
+workflow_update () {
+
+  # Clearing out the Old
+  reset_blueacorn_ui
+
+  # Bringing in the New
+  install_dependancies
+
+}
+
+prompt_confirm() {
+    while true; do
+        read -r -n 1 -p "${1:-$1} [y/n]: " REPLY
+        case $REPLY in
+            [yY]) echo ; return 0 ;;
+            [nN]) echo ; return 1 ;;
+            *) printf " \033[31m %s \n\033[0m" "invalid input"
+        esac
+    done
+}
+
+###########
+# Runtime #
+###########
+
+runstr="display_help"
+
+if [ $# -eq 0 ]; then
+    display_help 1
+else
+    while [ $# -ne 0 ]; do
+        case $1 in
+            -h|--help|help)    display_help ;;
+            dev_setup)         runstr="workflow_dev_setup" ; shift ;;
+            site_setup)        runstr="workflow_site_setup" ; shift ;;
+            update)            runstr="workflow_update" ;;
+        esac
+        shift
+    done
+
+    $runstr
+fi

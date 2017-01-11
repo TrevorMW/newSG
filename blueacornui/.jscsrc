@@ -1,0 +1,23 @@
+{
+  "esnext": true,
+  "disallowKeywordsOnNewLine": [
+    "else"
+  ],
+  "disallowMixedSpacesAndTabs": true,
+  "disallowTrailingComma": true,
+  "excludeFiles": [
+    "../site/**/static/**",
+    "../site/**/scripts/**",
+    "node_modules/**",
+    "../site/node_modules/**",
+    "../site/storefront_refapp/**",
+    "../site/doc/**",
+    "../site/**/lib/**",
+    "../site/**/dist/**",
+    "doc/**",
+    "**/lib/**",
+    "**/dist/**"
+  ],
+  "requireCommaBeforeLineBreak": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+}

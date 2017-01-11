@@ -1,0 +1,110 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<!--[if gte IE 9 | !IE]><!-->
+  <script src="${URLUtils.staticURL('/lib/jquery/jquery-2.1.1.min.js')}" type="text/javascript"></script>
+<!--<![endif]-->
+
+<!--[if lte IE 8]>
+  <script src="${URLUtils.staticURL('/lib/jquery/jquery-1.11.1.min.js')}" type="text/javascript"></script>
+  <script src="//cdn.rawgit.com/weblinc/media-match/master/media.match.min.js" type="text/javascript"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
+<![endif]-->
+
+<!--[if IE 9]>
+  <script src="//cdn.rawgit.com/paulirish/matchMedia.js/master/matchMedia.js" type="text/javascript"></script>
+  <script src="//cdn.rawgit.com/paulirish/matchMedia.js/master/matchMedia.addListener.js" type="text/javascript"></script>
+<![endif]-->
+
+<script src="${URLUtils.staticURL('/lib/jquery/ui/jquery-ui.min.js')}" type="text/javascript"></script>
+
+<iscomment>third-party add-ons</iscomment>
+<script src="${URLUtils.staticURL('/lib/jquery/jquery.jcarousel.min.js')}" type="text/javascript"></script>
+<script src="${URLUtils.staticURL('/lib/jquery/jquery.validate.min.js')}" type="text/javascript"></script>
+<script src="${URLUtils.staticURL('/lib/jquery/jquery.zoom.min.js')}" ></script>
+
+<iscomment>Enquire.js</iscomment>
+<script src="${URLUtils.staticURL('/lib/enquirejs/enquire.min.js')}" ></script>
+
+<iscomment>BX Slider</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-bxslider')}">
+    <script src="${URLUtils.staticURL('/lib/bxslider/jquery.bxslider.min.js')}" ></script>
+</isif>
+
+<iscomment>Fancybox</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-fancybox')}">
+    <script src="${URLUtils.staticURL('/lib/fancybox/jquery.fancybox.pack.js')}" ></script>
+</isif>
+
+<iscomment>Flexslider</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-flexslider')}">
+    <script src="${URLUtils.staticURL('/lib/flexslider/jquery.flexslider-min.js')}" ></script>
+</isif>
+
+<iscomment>Focus Point</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-focuspoint')}">
+    <script src="${URLUtils.staticURL('/lib/focuspoint/js/jquery.focuspoint.min.jss')}" ></script>
+</isif>
+
+<iscomment>Headroom.js</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-headroom')}">
+    <script src="${URLUtils.staticURL('/lib/headroom/headroom.min.js')}" ></script>
+</isif>
+
+<iscomment>Owl Carousel</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-owlcarousel')}">
+    <script src="${URLUtils.staticURL('/lib/owlcarousel2/owl.carousel.min.js')}" ></script>
+</isif>
+
+<iscomment>Parallax.js</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-parallax')}">
+    <script src="${URLUtils.staticURL('/lib/parallax/parallax.min.js')}" ></script>
+</isif>
+
+<iscomment>Placeholder.js</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-placeholderjs')}">
+    <script src="${URLUtils.staticURL('/lib/placeholderjs/placeholders.min.js')}" ></script>
+</isif>
+
+<iscomment>jQuery ScrollTo</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-scrollto')}">
+    <script src="${URLUtils.staticURL('/lib/scrollto/jquery.scrollTo.min.js')}" ></script>
+</isif>
+
+<iscomment>Spin.js</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-spinjs')}">
+    <script src="${URLUtils.staticURL('/lib/spinjs/spin.min.js')}" ></script>
+</isif>
+
+<iscomment>SVG Injector</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-svginjector')}">
+    <script src="${URLUtils.staticURL('/lib/svginjector/svg-injector.min.js')}" ></script>
+</isif>
+
+<iscomment>Responsive Images -- Needs to be last</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-responsiveimages')}">
+    <script src="${URLUtils.staticURL('/lib/responsiveimg/responsive-img.min.js')}" ></script>
+</isif>
+
+<iscomment>Application scripts</iscomment>
+<script type="text/javascript"><isinclude template="resources/appresources"/></script>
+<script type="text/javascript"><isinclude url="${URLUtils.url('Resources-LoadTransient')}"/></script>
+<script src="${URLUtils.staticURL('/js/app.js')}"></script>
+<isif condition="${!('pageContext' in this) || empty(pageContext)}">
+	<isscript>pageContext = new Object();</isscript>
+</isif>
+<script>pageContext = <isprint value="${JSON.stringify(pageContext)}" encoding="off"/>;</script>
+<script>
+var meta = "${pdict.CurrentPageMetaData.description}";
+var keywords = "${pdict.CurrentPageMetaData.keywords}";
+</script>
+
+<iscomment>Live Reload</iscomment>
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('ba-developer-debug')}">
+    <script>
+        (function() {
+            var a = document.createElement("script");
+            a.src = "//rawgit.com/livereload/livereload-js/master/dist/livereload.js?host=localhost";
+            document.getElementsByTagName("head")[0].appendChild(a)
+        })();
+    </script>
+</isif>

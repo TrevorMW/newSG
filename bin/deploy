@@ -1,0 +1,145 @@
+#!/usr/bin/env bash
+
+#/**
+# * @package     BlueAcorn/GreenPistachio
+# * @version     4.1.0
+# * @author      Blue Acorn, Inc. <code@blueacorn.com>
+# * @copyright   Copyright © 2016 Blue Acorn, Inc.
+# */
+
+# globals
+#########
+
+type greadlink >/dev/null 2>&1 && CWD="$(dirname "$(greadlink -f "$0")")" || \
+  CWD="$(dirname "$(readlink -f "$0")")"
+
+. $CWD/.functions.sh || error "unable to load shared functions"
+
+# varstrap
+##########
+
+ENVIROMENT_LIST=( $(cat $BLUEACORNUI_DIR/dw.json | $REPO_ROOT/bin/jq '.enviroments' | $REPO_ROOT/bin/jq 'keys[]') )
+
+###########
+# Utility #
+###########
+
+display_help () {
+
+cat <<-EOF
+
+  Utility for Managing Sandboxes
+
+  Usage: deploy <command> [options]
+
+  Commands:
+    sandbox [folder] [enviroment]   Deploys to sandbox
+    staging                         Deploys to staging
+    list                            Lists the Enviroments
+
+  Options:
+    --help                          Display help
+
+EOF
+
+    if [ $# -eq 0 ]; then
+        exit 0
+    fi
+
+    exit $1
+
+}
+
+error () {
+    echo -en >&2 "\033[31m"
+    echo -e >&2 "$@"
+    echo -en >&2 "\033[0m"
+    exit 1
+}
+
+############
+# Workflow #
+############
+
+upload_to_sandbox () {
+    
+    if [[ $# -eq 0 ]]; then
+        echo "no folders passed!"
+        echo
+
+        ls -l $WEBROOT_DIR | grep "^d" | awk -F" " '{print $9}'
+
+        read -p "Which folder? (You can also pass / for all directories) : " answer
+
+        upload_to_sandbox $answer
+    fi
+
+    if [[ $# -eq 1 ]]; then
+        echo "no environment passed!"
+        echo
+
+        list_enviroments
+
+        read -p "Which environment? : " answer
+
+        echo
+        prompt_confirm "Do you want to upload to the $answer sandbox?" || exit 0;
+
+        cd $BLUEACORNUI_DIR;
+        grunt redeploy --folder="$1" --env="$answer"
+
+    fi
+
+    if [ $# -eq 2 ]
+    then
+
+        echo
+        prompt_confirm "Do you want to upload to the $2 sandbox?" || exit 0;
+
+        cd $BLUEACORNUI_DIR;
+        grunt redeploy --folder="$1" --env="$2"
+
+    fi
+}
+
+upload_to_staging () {
+    echo
+    prompt_confirm "Do you want to upload to the sandbox?" || exit 0;
+
+    cd $BLUEACORNUI_DIR;
+    grunt redeploy --folder="/" --env="staging"
+}
+
+list_enviroments() {
+    cd $BLUEACORNUI_DIR;
+    if [ -f $BLUEACORNUI_DIR/dw.json ]; then
+        echo "Available Enviroments:"
+        echo
+
+        printf '%s\n' "${ENVIROMENT_LIST[@]}"
+    else
+        echo "Ruh Roh - No Enviroments Configured at this time :("
+    fi
+}
+
+###########
+# Runtime #
+###########
+
+runstr="display_help"
+
+if [ $# -eq 0 ]; then
+    display_help 1
+else
+    while [ $# -ne 0 ]; do
+        case $1 in
+            -h|--help|help)     display_help ;;
+            sandbox)            runstr="upload_to_sandbox $2 $3" ; shift ;;
+            staging)            runstr="upload_to_staging" ; shift ;;
+            list)               runstr="list_enviroments" ; shift ;;
+        esac
+        shift
+    done
+
+    $runstr
+fi

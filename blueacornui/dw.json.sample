@@ -1,0 +1,11 @@
+{
+  "root": "../site/",
+  "enviroments": {
+      "dev": {
+        "hostname": "blueacorn01-alliance-prtnr-na01-dw.demandware.net",
+        "username": "user",
+        "password": "pass",
+        "version": "version1"
+      }
+  }
+}

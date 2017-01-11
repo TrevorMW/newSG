@@ -1,0 +1,8 @@
+# compiled / minified assets
+############################
+
+*/css
+*/js
+
+# ignore development map files
+*.css.map

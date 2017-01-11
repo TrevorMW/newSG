@@ -1,0 +1,8 @@
+node_modules
+**/lib/**
+**/static/**
+**/dist/**
+../site/**/static/**
+../site/dist/**
+../site/lib/**
+../site/node_modules

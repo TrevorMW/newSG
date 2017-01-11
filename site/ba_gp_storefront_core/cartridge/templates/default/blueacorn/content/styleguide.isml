@@ -1,0 +1,333 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<iscache type="relative" hour="24"/>
+
+<isdecorate template="content/content/pt_content">
+
+    <div class="styleguide-content">
+        <h1>Style Guide</h1>
+
+        <section class="sg-colors">
+            <h3 class="sg-h">Colors</h3>
+            <ul>
+                <li class="brand-primary">
+                    <span></span>
+                    <p>Brand Primary</p>
+                </li>
+                <li class="brand-secondary">
+                    <span></span>
+                    <p>Brand Secondary</p>
+                </li>
+                <li class="brand-tertiary">
+                    <span></span>
+                    <p>Brand Tertiary</p>
+                </li>
+                <li class="brand-success">
+                    <span></span>
+                    <p>Brand Success</p>
+                </li>
+                <li class="brand-warning">
+                    <span></span>
+                    <p>Brand Warning</p>
+                </li>
+                <li class="brand-danger">
+                    <span></span>
+                    <p>Brand Danger</p>
+                </li>
+                <li class="brand-info">
+                    <span></span>
+                    <p>Brand Info</p>
+                </li>
+                <li class="brand-dark">
+                    <span></span>
+                    <p>Brand Dark</p>
+                </li>
+                <li class="brand-light">
+                    <span></span>
+                    <p>Brand Light</p>
+                </li>
+                <li class="brand-text">
+                    <span></span>
+                    <p>Brand Text</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="sg-typography">
+            <h3 class="sg-h">Typography</h3>
+            <aside class="base">
+                <dl>
+                    <dt>Paragraph</dt>
+                    <dd class="sg-paragaphs"><p>Donec ullamcorper nulla non metus auctor fringilla. <a href="#">Maecenas</a> sed diam eget risus varius blandit sit amet non magna.</p></dd>
+                    <dt>Links</dt>
+                    <dd class="sg-links"><a href="#">This is a text link.</a></dd>
+                    <dt>Strong Text</dt>
+                    <dd class="sg-strong"><strong>Strong is used to indicate strong importance</strong></dd>
+                    <dt>Emphasis Text</dt>
+                    <dd class="sg-emphasis"><em>This text has added emphasis</em></dd>
+                </dl>
+            </aside>
+            <aside class="headings">
+                <ul>
+                    <li><h1>Heading 1</h1></li>
+                    <li><h2>Heading 2</h2></li>
+                    <li><h3>Heading 3</h3></li>
+                    <li><h4>Heading 4</h4></li>
+                    <li><h5>Heading 5</h5></li>
+                    <li><h6>Heading 6</h6></li>
+                </ul>
+            </aside>
+            <aside class="unordered">
+                <h4>Unordered List</h4>
+                <ul>
+                    <li>This is a list item in an unordered list</li>
+                    <li>The sequence of items is not important.</li>
+                    <li>Lists can be nested inside of each other
+                        <ul>
+                            <li>This is a nested list item</li>
+                            <li>This is another nested list item</li>
+                        </ul>
+                    </li>
+                    <li>This is the last list item</li>
+                </ul>
+            </aside>
+            <aside class="ordered">
+                <h4>Ordered List</h4>
+                <ol>
+                    <li>This is a list item in an ordered list</li>
+                    <li>The sequence of items is important.</li>
+                    <li>Lists can be nested inside of each other
+                        <ol>
+                            <li>This is a nested list item</li>
+                            <li>This is another nested list item</li>
+                        </ol>
+                    </li>
+                    <li>This is the last list item</li>
+                </ol>
+            </aside>
+            <aside class="bq">
+                <h4>Block Quote</h4>
+                <blockquote>Nullam id dolor id nibh ultricies vehicula ut id elit.</blockquote>
+            </aside>
+        </section>
+
+        <section class="sg-button">
+            <h3 class="sg-h">Buttons</h3>
+            <ul>
+                <li>
+                    <small>Primary Button</small>
+                    <span class="source"><button class="button"><span><span>Primary</span></span></button></span>
+                </li>
+                <li>
+                    <small>Primary Button Small</small>
+                    <span class="source"><button class="button btn-small"><span><span>Primary</span></span></button></span>
+                </li>
+                <li>
+                    <small>Primary Button Anchor</small>
+                    <span class="source"><a class="button"><span>Primary</span></a></span>
+                </li>
+
+                <li>
+                    <small>Secondary Button</small>
+                    <span class="source"><button class="button button-secondary"><span><span>Secondary</span></span></button></span>
+                </li>
+                <li>
+                    <small>Secondary Button Small</small>
+                    <span class="source"><button class="button btn-small button-secondary"><span><span>Secondary</span></span></button></span>
+                </li>
+                <li>
+                    <small>Secondary Button Anchor</small>
+                    <span class="source"><a class="button button-secondary"><span>Secondary</span></a></span>
+                </li>
+                <li>
+                    <small>Add to Cart</small>
+                    <span class="source"><button class="button btn-cart"><span><span>Add to Cart</span></span></button></span>
+                </li>
+                <li>
+                    <small>Add to Cart Small</small>
+                    <span class="source"><button class="button btn-small btn-cart"><span><span>Add to Cart</span></span></button></span>
+                </li>
+                <li>
+                    <small>Add to Cart Anchor</small>
+                    <span class="source"><a class="button btn-cart"><span>Add to Cart</span></a></span>
+                </li>
+
+                <li>
+                    <small>Checkout Continue Button</small>
+                    <span class="source"><button class="button btn-continue"><span><span>Continue</span></span></button></span>
+                </li>
+                <li>
+                    <small>Alternate Continue Button</small>
+                    <span class="source"><button class="button btn-continue button-secondary"><span><span>Continue</span></span></button></span>
+                </li>
+
+                <li>
+                    <small>Proceed to Checkout Button</small>
+                    <span class="source"><button type="button" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout"><span><span>Proceed to Checkout</span></span></button></span>
+                </li>
+                <li>
+                    <small>Clear Shopping Cart Button</small>
+                    <span class="source"><button type="submit" name="update_cart_action" value="empty_cart" title="Clear Shopping Cart" class="button btn-empty button-secondary" id="empty_cart_button"><span><span>Clear Shopping Cart</span></span></button></span>
+                </li>
+                <li>
+                    <small>Update Shopping Cart Button</small>
+                    <span class="source"><button type="submit" name="update_cart_action" value="update_qty" title="Update Shopping Cart" class="button btn-update button-secondary"><span><span>Update Shopping Cart</span></span></button></span>
+                </li>
+                <li class="cart">
+                    <small>Continue Shopping Button</small>
+                    <span class="source"><button type="button" title="Continue Shopping" class="button btn-continue"><span><span>Continue Shopping</span></span></button></span>
+                </li>
+                <li>
+                    <small>Checkout Back Button</small>
+                    <span class="source"><p class="back-link"><a href="#"><small>« </small>Back</a></p></span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="sg-form">
+            <h3 class="sg-h">Forms</h3>
+            <form>
+                <div class="form-row  required" aria-required="true">
+                    <label for="dwfrm_singleshipping_shippingAddress_addressFields_firstName"><span class="required-indicator">• </span><span>Text Input</span></label>
+                    <div class="field-wrapper">
+                        <input class="input-text  required" type="text" id="dwfrm_singleshipping_shippingAddress_addressFields_firstName" name="dwfrm_singleshipping_shippingAddress_addressFields_firstName" value="" aria-required="true" style="cursor: auto; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;">
+                    </div>
+
+                    <div class="form-caption"></div>
+                </div>
+
+                <div class="form-row username required" aria-required="true">
+                    <label for="dwfrm_login_username_d0mlceglhjpk"><span class="required-indicator">• </span><span>Email - Validation Failed</span></label>
+
+                    <div class="field-wrapper">
+                        <input class="input-text  required error" type="text" id="dwfrm_login_username_d0mlceglhjpk" name="dwfrm_login_username_d0mlceglhjpk" value="" aria-required="true" style="cursor: auto; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAYJJREFUOBGVVLuKwkAUPRFRY2GlhRKDVRpBMFgJgRQ2C37HCvmCdOpnuE0qWzvZBf8hTbC2SLAKqQQfTXbumAy6xE0cmMx9nHNm5t4h0nK5/IjjeMVmFwWGJEk+g30uFosfgpfeIRMh2eiLbBokUGjnO/z+feSUHhN5dr1eh6ZpT7C3BHq9HiaTSbZArVYTiWq1ClYs4T/mRDAxyrROp1Pouo71eo0oimBZFo7HIxzHecr9JZP/1hWyBKT5fB5Tgo55uVw4hq5wvV6z8CLGrhgwZyZOkJIJkUcmDGulwpYVrwEF8oZhGOj3+2g2m7xWh8OBi4gT/CcwHo9hmiZ838d2u+WFTvGl5G2nfuY6Go04WZZlqKqK2+0mcCQwyxNpNBpQFAWVSgXD4RCDwUAIlFkXvpmnikhipN0h93w+43Q6YbPZwLZtdDodAS9UA8/z0G63+QMjJhUwHS+7QH1OWoXdbocwDNFqtRAEAfb7PecT5qUAQ1Bt6EejsAnXddNNBZkwv/3KjSrHve9/AAAAAElFTkSuQmCC&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;" autocomplete="off" aria-describedby="dwfrm_login_username_d0mlceglhjpk-error" aria-invalid="true"><span id="dwfrm_login_username_d0mlceglhjpk-error" class="error">This field is required.</span>
+                    </div>
+
+                    <div class="form-caption"></div>
+
+                </div>
+
+
+                <div class="form-row username required" aria-required="true">
+                    <label for="dwfrm_login_username_d0mlceglhjpk"><span class="required-indicator">• </span><span>Email - Validation Passed</span></label>
+
+                    <div class="field-wrapper">
+                        <input class="input-text  required valid" type="text" id="dwfrm_login_username_d0mlceglhjpk" name="dwfrm_login_username_d0mlceglhjpk" value="" aria-required="true" style="cursor: auto; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;" autocomplete="off" aria-describedby="dwfrm_login_username_d0mlceglhjpk-error" aria-invalid="false"><span id="dwfrm_login_username_d0mlceglhjpk-error" class="error" style="display: none;"></span>
+                    </div>
+
+                    <div class="form-caption"></div>
+                </div>
+
+
+                <div class="form-row password required" aria-required="true">
+                    <label for="dwfrm_login_password_d0tvnwjnmlfp"><span class="required-indicator">• </span><span>Password</span></label>
+
+                    <div class="field-wrapper">
+                        <input class="input-text  required" type="password" id="dwfrm_login_password_d0tvnwjnmlfp" name="dwfrm_login_password_d0tvnwjnmlfp" value="" autocomplete="off" aria-required="true" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAYJJREFUOBGVVLuKwkAUPRFRY2GlhRKDVRpBMFgJgRQ2C37HCvmCdOpnuE0qWzvZBf8hTbC2SLAKqQQfTXbumAy6xE0cmMx9nHNm5t4h0nK5/IjjeMVmFwWGJEk+g30uFosfgpfeIRMh2eiLbBokUGjnO/z+feSUHhN5dr1eh6ZpT7C3BHq9HiaTSbZArVYTiWq1ClYs4T/mRDAxyrROp1Pouo71eo0oimBZFo7HIxzHecr9JZP/1hWyBKT5fB5Tgo55uVw4hq5wvV6z8CLGrhgwZyZOkJIJkUcmDGulwpYVrwEF8oZhGOj3+2g2m7xWh8OBi4gT/CcwHo9hmiZ838d2u+WFTvGl5G2nfuY6Go04WZZlqKqK2+0mcCQwyxNpNBpQFAWVSgXD4RCDwUAIlFkXvpmnikhipN0h93w+43Q6YbPZwLZtdDodAS9UA8/z0G63+QMjJhUwHS+7QH1OWoXdbocwDNFqtRAEAfb7PecT5qUAQ1Bt6EejsAnXddNNBZkwv/3KjSrHve9/AAAAAElFTkSuQmCC&quot;); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;">
+                    </div>
+
+                    <div class="form-caption"></div>
+
+                </div>
+
+                <ul class="form-list">
+                    <li class="form-row label-inline">
+                        <label for="shipping-method-001" class="radio-label">Custom Radio</label>
+                        <div class="field-wrapper">
+                            <input class="input-radio input-custom" type="radio" name="dwfrm_singleshipping_shippingAddress_shippingMethodID" id="shipping-method-001" value="001">
+                        </div>
+                    </li>
+                    <li class="form-row label-inline">
+                        <label for="shipping-method-001" class="checked radio-label">Custom Radio Active</label>
+                        <div class="field-wrapper">
+                            <input class="input-radio input-custom" type="radio" name="dwfrm_singleshipping_shippingAddress_shippingMethodID" id="shipping-method-002" value="002" checked="checked">
+                        </div>
+                    </li>
+                    <li class="form-row label-inline">
+                        <label for="shipping-method-001" class="radio-label">Custom Radio Disabled</label>
+                        <div class="field-wrapper">
+                            <input class="input-radio input-custom" type="radio" disabled="disabled" name="dwfrm_singleshipping_shippingAddress_shippingMethodID" id="shipping-method-003" value="003">
+                        </div>
+                    </li>
+                    <li class="form-row label-inline">
+                        <div class="field-wrapper">
+                            <input class="input-checkbox input-custom" type="checkbox" id="dwfrm_profile_customer_addtoemaillist1" name="dwfrm_profile_customer_addtoemaillist1" value="true">
+                        </div>
+                        <label for="dwfrm_profile_customer_addtoemaillist1" class="checkbox-label"><span>Custom Checkbox</span></label>
+                    </li>
+                    <li class="form-row label-inline">
+                        <div class="field-wrapper">
+                            <input class="input-checkbox input-custom" type="checkbox" id="dwfrm_profile_customer_addtoemaillist2" name="dwfrm_profile_customer_addtoemaillist2" value="true" checked="checked">
+                        </div>
+                        <label for="dwfrm_profile_customer_addtoemaillist2" class="checkbox-label checked"><span>Custom Checkbox Active</span></label>
+                    </li>
+                    <li class="form-row label-inline">
+                        <div class="field-wrapper">
+                            <input class="input-checkbox input-custom" type="checkbox" id="dwfrm_profile_customer_addtoemaillist3" disabled="disabled" name="dwfrm_profile_customer_addtoemaillist3" value="true">
+                        </div>
+                        <label for="dwfrm_profile_customer_addtoemaillist3" class="checkbox-label"><span>Custom Checkbox Disabled</span></label>
+                    </li>
+                    <li class="form-row label-inline">
+                        <div class="field-wrapper">
+                            <input class="input-checkbox input-custom no-style" type="checkbox" id="dwfrm_profile_customer_addtoemaillist4" name="dwfrm_profile_customer_addtoemaillist4" value="true">
+                        </div>
+                        <label for="dwfrm_profile_customer_addtoemaillist4" class="checkbox-label"><span>Custom Checkbox - No styles</span></label>
+                    </li>
+
+
+                    <li class="fields">
+                        <div class="field">
+                            <label for="custom-select" class="required"><em>*</em>Custom Select</label>
+                            <div class="input-box">
+                                <select id="custom-select" name="custom-select" title="Custom Select" class="validate-select required-entry">
+                                    <option value="">Please select a Ninja Turtle, or Character</option>
+                                    <option value="1">Leonardo</option>
+                                    <option value="2">Michelangelo</option>
+                                    <option value="3">Donatello</option>
+                                    <option value="999">Raphael</option>
+                                    <option value="4">Splinter</option>
+                                    <option value="5">April O'Neil</option>
+                                    <option value="6">Casey Jones</option>
+                                    <option value="7">Shredder</option>
+                                    <option value="8">Karai</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="custom-select" class="required"><em>*</em>Custom Select - Validation Error</label>
+                            <div class="input-box validation-error">
+                                <select id="custom-select" name="custom-select" title="Custom Select" class="validate-select required-entry validation-failed">
+                                    <option value="">Would you like to know more?</option>
+                                    <option value="1">Yes</option>
+                                    <option value="3">The only good bug, is a dead bug.</option>
+                                </select>
+                                <div class="validation-advice">Please select an option.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="fields">
+                        <div class="field">
+                            <label for="custom-select" class="required"><em>*</em>Custom Select Small</label>
+                            <div class="input-box">
+                                <select id="custom-select" name="custom-select" title="Custom Select" class="validate-select required-entry small-select">
+                                    <option value="">---</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="unstyled-select" class="required"><em>*</em>Non-Custom Select</label>
+                            <div class="input-box">
+                                <select id="unstyled-select" name="custom-select" title="Custom Select" class="validate-select required-entry no-style">
+                                    <option value="">---</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </div>
+</isdecorate>

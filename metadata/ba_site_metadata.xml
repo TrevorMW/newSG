@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="ba-developer-debug">
+                <display-name xml:lang="x-default">Blue Acorn Developer Debugging</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-bxslider">
+                <display-name xml:lang="x-default">BX Slider Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-fancybox">
+                <display-name xml:lang="x-default">Fancybox Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-flexslider">
+                <display-name xml:lang="x-default">Flexslider Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-focuspoint">
+                <display-name xml:lang="x-default">jQuery FocusPoint Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-headroom">
+                <display-name xml:lang="x-default">Headroom.js Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-owlcarousel">
+                <display-name xml:lang="x-default">Owl Carousel 2 Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-parallax">
+                <display-name xml:lang="x-default">Parallax.js Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-placeholderjs">
+                <display-name xml:lang="x-default">Placeholder.js Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-responsiveimages">
+                <display-name xml:lang="x-default">Responsive Images Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-scrollto">
+                <display-name xml:lang="x-default">jQuery ScrollTo Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-spinjs">
+                <display-name xml:lang="x-default">Spin.js Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ba-svginjector">
+                <display-name xml:lang="x-default">SVG Injector Plugin Enabled?</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="BlueAcorn Configs">
+                <display-name xml:lang="x-default">BlueAcorn Configurations</display-name>
+                <attribute attribute-id="ba-developer-debug"/>
+                <attribute attribute-id="ba-bxslider"/>
+                <attribute attribute-id="ba-fancybox"/>
+                <attribute attribute-id="ba-flexslider"/>
+                <attribute attribute-id="ba-focuspoint"/>
+                <attribute attribute-id="ba-headroom"/>
+                <attribute attribute-id="ba-owlcarousel"/>
+                <attribute attribute-id="ba-parallax"/>
+                <attribute attribute-id="ba-placeholderjs"/>
+                <attribute attribute-id="ba-responsiveimages"/>
+                <attribute attribute-id="ba-scrollto"/>
+                <attribute attribute-id="ba-spinjs"/>
+                <attribute attribute-id="ba-svginjector"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

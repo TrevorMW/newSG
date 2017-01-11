@@ -1,0 +1,272 @@
+.styleguide-content {
+    padding: 20px;
+}
+
+> h1, .sg-h {
+    margin: 0 0 20px;
+    @include grid-media(m, min) {
+        @include g(m, all, false, true);
+    }
+    @include grid-media(t, min) {
+        @include g(t, all, false, true);
+    }
+    @include grid-media(d, min) {
+        @include reset-g-padding();
+    }
+}
+.sg-h {
+    font-weight: 100;
+    font-family: $sans-serif;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: $black-40;
+}
+
+.cms-style-guide section {
+    @include g(m, all);
+    margin: 0 0 50px;
+    &.active-section {
+        display: block;
+    }
+}
+
+// Colors
+.sg-colors {
+    @include g(m, all);
+    ul {
+        list-style: none;
+        @include g-all;
+        @include grid-media(d, min) {
+            @include reset-g-padding();
+        }
+        li {
+            float: left;
+            margin-bottom: 20px;
+            @include g-item(max, $bp-large + 1, 5, 980, 19.5);
+            @include g-item($bp-large, $bp-small + 1, 3, 600, 13);
+            @include g-item($bp-small, 320px, 2, 320, 6.5);
+            span {
+                display: block;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 20px;
+                position: relative;
+                &:before, &:after {
+                    display: block;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    bottom: 0;
+                    position: absolute;
+                    content: '';
+                }
+                &:before { left: 0; }
+                &:after { right: 0; }
+            }
+            p {
+                @include g(m, all);
+                text-align: center;
+            }
+        }
+    }
+    .code {
+        padding: 10px;
+        @include g-all();
+        text-align: center;
+        color: $white;
+        border-radius: $default-border-radius;
+        text-shadow: 0 0 2px rgba(0, 0, 0, .75);
+    }
+}
+
+.code {
+    display: none;
+    clear: both;
+    width: 100%;
+    pre {
+        border-radius: $default-border-radius;
+        margin-bottom: 10px;
+    }
+}
+.code-active .code { display: block; }
+
+@mixin build-brand-color($color, $var) {
+    .#{$color} {
+        span,
+        .code {
+            background: $var;
+        }
+        span:before {
+            background: lighten($var, 10%);
+        }
+        span:after {
+            background: darken($var, 10%);
+        }
+    }
+}
+
+@include build-brand-color('brand-primary', $brand-primary);
+@include build-brand-color('brand-secondary', $brand-secondary);
+@include build-brand-color('brand-tertiary', $brand-tertiary);
+@include build-brand-color('brand-success', $brand-success);
+@include build-brand-color('brand-warning', $brand-warning);
+@include build-brand-color('brand-danger', $brand-danger);
+@include build-brand-color('brand-info', $brand-info);
+@include build-brand-color('brand-dark', $brand-dark);
+@include build-brand-color('brand-light', $brand-light);
+@include build-brand-color('brand-text', $brand-text);
+
+// Typography
+.styleguide-content .sg-typography {
+    .sg-h { padding: 0; }
+    @include g(m, all, false, true);
+    @include grid-media(t, min) {
+        @include g(t, all, false, true);
+    }
+    @include grid-media(d, min) {
+        @include g(d, all, false, false);
+        @include reset-g-padding();
+    }
+    aside {
+        margin-bottom: 30px;
+        padding: 0 20px;
+        @include g(m, all);
+        @include grid-media(t, min) {
+            clear: none;
+            width: 45%;
+            &.headings {
+                float: right;
+            }
+        }
+        @include grid-media(d, min) {
+            width: 45%;
+            clear: none;
+            &.headings {
+                float: right;
+            }
+        }
+        dl {
+            @include g(m, all);
+        }
+        dt {
+            @include g(m, all);
+            text-align: left;
+            color: $black-30;
+            padding: 0 0 10px;
+            margin: 0;
+            @include grid-media(t, min) {
+                text-align: right;
+                width: percentage(1/5);
+            }
+        }
+        dd {
+            @include g(m, all);
+            padding: 0 0 10px;
+            margin: 0;
+            @include grid-media(t, min) {
+                float: right;
+                width: percentage(3.5/5);
+                padding-left: 20px;
+                clear: none;
+            }
+            h1, h2, h3, h4, h5, h6 { line-height: normal; }
+
+            p {
+                margin: 0;
+            }
+        }
+        &.bq {
+            clear: both;
+        }
+        &.unordered {
+            ul {
+                clear: both;
+                margin-left: 1em;
+                list-style: disc;
+            }
+        }
+        &.ordered {
+            ol {
+                list-style: decimal;
+                margin-left: 1em;
+            }
+        }
+    }
+}
+
+.sg-button {
+    @include g(m, all);
+    .button {
+        clear: both;
+        float: left;
+    }
+    ul {
+        list-style: none;
+        @include g-all-pad();
+        @include grid-media(d, min) {
+            @include reset-g-padding();
+        }
+        li {
+            float: left;
+            padding: 0 0 30px;
+            margin: 0;
+            width: 100%;
+            @include g-item(max, $bp-large + 1, 3, 980, 19.5);
+            @include g-item($bp-large, $bp-small + 1, 2, 600, 13);
+            > small {
+                @include g(m, all);
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .code {
+        @include g-all();
+        margin-top: 10px;
+    }
+}
+
+.sg-form {
+    @include g-all-pad();
+    @include grid-media(d, min) {
+        @include reset-g-padding();
+    }
+    .sg-h { padding: 0; }
+    ul {
+        list-style: none !important;
+        @include g-all();
+        padding: 0;
+        li {
+            @include g-all();
+            .field {
+                width: 50%;
+                float: left;
+                @include g-item(max, $bp-small + 1, 2, 600, 19.5);
+                @include g-item($bp-small, 320px, 1, 320, 6.25);
+            }
+        }
+    }
+    li.control {
+        float: left;
+        width: 50%;
+        margin-left: 0;
+        clear: none;
+        padding-left: 1.625%;
+        &:nth-child(2n + 2) {
+            padding-left: 0;
+        }
+        @include g-item($bp-small, 320px, 1, 320, 6.5);
+        @include bp(max-width, $bp-small) {
+            padding-left: 0;
+        }
+    }
+}
+
+.sg-messages {
+    small {
+        @include g(m, all);
+        margin-bottom: 10px;
+    }
+}
+
+ul li.fields, ul li.wide { margin-left: 0; }
